@@ -1,4 +1,0 @@
-docker login  -u azkssd
-dckr_pat_KVKoQIywkatgNmLJlrXxWTAF4sk
-
-dckr_pat_KVKoQIywkatgNmLJlrXxWTAF4sk
