@@ -1,0 +1,11 @@
+# Use a minimal Java runtime image
+FROM openjdk:11-jre-slim
+
+# Copy the compiled Java class file (folder) into the Docker image
+COPY . /app/
+
+# Set the working directory
+WORKDIR /app
+
+# Run the Java program
+CMD ["java", "Main"]

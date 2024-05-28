@@ -1,0 +1,32 @@
+version: '3.7'
+
+services:
+    backend:
+        build:
+          context: "C:/Users/33781/Documents/DevOps TP1/api/simple-api-student-main"
+        container_name: "simple-student-container"
+        networks:
+          - app-network
+        depends_on:
+          - database
+
+    database:
+        build:
+          context: "./"
+        container_name: "my-postgres-container"
+        networks:
+          - app-network
+
+    httpd:
+        build:
+          context: "C:/Users/33781/Documents/DevOps TP1/http"
+        ports:
+          - "8086:80"
+        networks:
+          - app-network
+        depends_on:
+          - backend
+          - database
+
+networks:
+    app-network:
