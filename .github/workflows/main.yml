@@ -1,0 +1,25 @@
+name: DevOps1
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test-backend:
+    runs-on: ubuntu-22.04
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2.5.0
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'adopt'  # specify the distribution here
+
+      - name: Build and test with Maven
+        run:
+          mvn clean verify --file api/simple-api-student-main/pom.xml
