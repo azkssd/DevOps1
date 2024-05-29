@@ -1,0 +1,13 @@
+---
+# tasks file for roles/database
+- name: Run database
+  docker_container:
+    name: my-postgres-container
+    image: azkssd/database:latest
+    state: started
+    networks:
+      - name: my_network
+    env:
+      POSTGRES_PASSWORD: pwd
+      POSTGRES_DB: db
+      POSTGRES_USER: usr 

@@ -1,0 +1,15 @@
+---
+# tasks file for roles/api
+- name: Run API
+  docker_container:
+    name: simple-student-container
+    image: azkssd/backend:latest
+    state: started
+    networks:
+      - name: my_network
+    env:
+      DB_host: database
+      DATABASE_USER: usr
+      DATABASE_PASSWORD: pwd
+      DATABASE_NAME: db
+      DATABASE_PORT: "5432"

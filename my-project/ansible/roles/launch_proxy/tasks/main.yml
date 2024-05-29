@@ -1,0 +1,13 @@
+---
+# tasks file for roles/http
+- name: Run httpd
+  docker_container:
+    name: httpd
+    image: azkssd/httpd:latest
+    state: started
+    networks:
+      - name: my_network
+    env:
+      BACKEND_host: api
+    ports:
+      - "80:80"
