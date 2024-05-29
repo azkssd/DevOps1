@@ -55,4 +55,4 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}      
 
       - name: Sonar execution
-        run: mvn -B verify sonar:sonar -Dsonar.projectKey=simple-api1234 -Dsonar.organization=simple-api -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./api/simple-api-student-main/pom.xml
+        run: mvn -B verify sonar:sonar -Dsonar.projectKey=simple-api1234 -Dsonar.organization=simple-api1234 -Dsonar.host.url=https://sonarcloud.io -Dsonar.login=${{ secrets.SONAR_TOKEN }}  --file ./api/simple-api-student-main/pom.xml
