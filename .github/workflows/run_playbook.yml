@@ -2,7 +2,7 @@ name: Run Playbook
 
 on:
   workflow_run:
-    workflows: ["CI DevOps 2024"]
+    workflows: ["CI devops 2024"]
     types:
       - completed
     branches:
